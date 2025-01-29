@@ -1,0 +1,168 @@
+/* Tailwind base imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Body Styling with Dark Background and Smooth Animations */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif; /* Sleek and modern font */
+  background-color: #000000; /* Black background */
+  color: #eaeaea; /* Light text color */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Create a starry background with animated movement */
+@keyframes starAnimation {
+  0% { background-position: 0 0; }
+  100% { background-position: 2000px 2000px; }
+}
+
+/* Adding a starry animated background */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Starry texture */
+  background-size: 2000px 2000px; /* Large star field */
+  animation: starAnimation 50s linear infinite;
+  z-index: -1;
+}
+
+/* Header with glowing, modern look */
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  background: linear-gradient(45deg, #ff007f, #00b3b3);
+  -webkit-background-clip: text;
+  color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Header hover effect for glowing effect */
+h1:hover, h2:hover, h3:hover {
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.6);
+  transform: scale(1.05);
+}
+
+/* Glowing Input and Textarea Fields */
+input,
+textarea {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #ff007f; /* Neon pinkish-red border */
+  border-radius: 8px;
+  padding: 15px;
+  color: #eaeaea;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Focus effect with glowing border on inputs */
+input:focus,
+textarea:focus {
+  border-color: #00ffcc; /* Glowing cyan border on focus */
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
+}
+
+/* Smooth hover effect on buttons */
+button {
+  background-color: #00ffcc; /* Neon cyan button */
+  color: #1c1c1c; /* Dark button text */
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 0 5px rgba(0, 255, 204, 0.5), 0 0 10px rgba(0, 255, 204, 0.6);
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #ff007f; /* Neon red on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.8), 0 0 30px rgba(255, 0, 127, 0.5);
+}
+
+/* Active button effect for press-down */
+button:active {
+  background-color: #00b3b3; /* Cyan on active */
+  transform: translateY(2px);
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 127, 0.5);
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 0, 127, 0.8);
+}
+
+/* Links with neon glow effect */
+a {
+  color: #00b3b3; /* Cyan color for links */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect on links */
+a:hover {
+  color: #ff007f; /* Red hover color */
+  transform: scale(1.05);
+}
+
+/* Glowing, floating animation effect */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Apply floating animation to certain elements */
+h1, h2, h3, button, input {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Responsive Design: Adjusting font sizes for mobile screens */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    padding: 12px 22px;
+    font-size: 1rem;
+  }
+
+  input, textarea {
+    padding: 12px;
+  }
+}

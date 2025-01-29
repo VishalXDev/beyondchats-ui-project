@@ -1,0 +1,121 @@
+/* App Container */
+.App {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  background: radial-gradient(circle, rgba(28, 28, 34, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Logo Styling with Glow Effect */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  margin-bottom: 20px;
+  transition: transform 1s ease-in-out, box-shadow 0.5s ease;
+}
+
+.App-logo:hover {
+  transform: rotate(360deg);
+  box-shadow: 0 0 20px rgba(96, 238, 255, 0.7), 0 0 50px rgba(96, 238, 255, 0.5);
+}
+
+/* Header Section with Glowing Border */
+.App-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  transform: scale(0.98);
+  transition: transform 0.5s ease-in-out;
+}
+
+.App-header:hover {
+  transform: scale(1);
+}
+
+/* Heading with Neon Text Effect */
+.App-header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(96, 238, 255, 0.7), 0 0 20px rgba(96, 238, 255, 0.6), 0 0 30px rgba(96, 238, 255, 0.5);
+  color: #00eaff;
+  animation: neonPulse 1.5s infinite alternate;
+}
+
+/* Glowing Link Styling */
+.App-link {
+  color: #00eaff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 0 10px rgba(96, 238, 255, 0.5), 0 0 20px rgba(96, 238, 255, 0.3);
+}
+
+.App-link:hover {
+  background-color: rgba(96, 238, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+.App-link:focus {
+  outline: 3px solid #00eaff;
+  outline-offset: 5px;
+}
+
+/* Neon Pulse Animation */
+@keyframes neonPulse {
+  0% {
+    text-shadow: 0 0 20px rgba(96, 238, 255, 0.5), 0 0 30px rgba(96, 238, 255, 0.4), 0 0 40px rgba(96, 238, 255, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(96, 238, 255, 1), 0 0 20px rgba(96, 238, 255, 0.8), 0 0 30px rgba(96, 238, 255, 0.6);
+  }
+}
+
+/* Spinning Logo Animation */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile Responsiveness with Scaling */
+@media (max-width: 768px) {
+  .App-logo {
+    height: 30vmin;
+  }
+
+  .App-header {
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .App-header h1 {
+    font-size: 2.8rem;
+  }
+
+  .App-link {
+    font-size: 1.1rem;
+    padding: 8px 15px;
+  }
+}
